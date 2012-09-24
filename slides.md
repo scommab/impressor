@@ -2,7 +2,7 @@
 # Impressor
 
 === {"styles": ["just_title"]}
-# [Impressor](http://scommab.github.com/impressor/) is a tool for generating [impress.js](http://bartaz.github.com/impress.js/) presentations 
+# [Impressor](http://scommab.github.com/impressor/) is a tool for generating [impress.js](http://github.com/bartaz/impress.js/) presentations 
 
 === 
 # What does Impressor do?
