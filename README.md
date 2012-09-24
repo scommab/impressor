@@ -1,7 +1,5 @@
 
-# Redis is Awesome
-
-An impress.js slide show showing off Redis' Awesomeness
+# Impressor
 
 ## How to Generate slide show
 
