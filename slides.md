@@ -2,7 +2,7 @@
 # Impressor
 
 === {"styles": ["just_title"]}
-# Impressor is a tool for generating <a href="http://bartaz.github.com/impress.js/">impress.js</a> presentations 
+# [Impressor](http://scommab.github.com/impressor/) is a tool for generating [impress.js](http://bartaz.github.com/impress.js/) presentations 
 
 === 
 # What does Impressor do?
@@ -21,7 +21,7 @@
 # Slides can be under other slides
 
 === {"type": "under", "rotate":180, "styles": ["just_title"]}
-# Slides can be Rotate
+# Slides can be Rotated
 
 === {"type": ["reset", "default"], "styles": ["just_title"]}
 # And Slides can be reset back to the base line
@@ -45,8 +45,8 @@
 ## Slides with multiple sections 
 * These slides work well with lists on them
 
-## And mutliple topics
-With mutliple bits of information
+## And multiple topics
+With multiple bits of information
 
 
 === {"type": ["reset", "default"]}
@@ -86,16 +86,16 @@ With mutliple bits of information
 # And back to normal
 
 === {"styles": ["just_title"]}
-# All templates are defined in `types.json`
+# All templates are defined in [`types.json`](https://github.com/scommab/impressor/blob/master/types.json)
 
 === {"styles": ["just_title"]}
-# All styles are defined in `impressor.css`
+# All styles are defined in [`impressor.css`](https://github.com/scommab/impressor/blob/master/css/impressor.css)
 
 === {"styles": ["just_title"]}
-# The text of your slides go in to `slides.md`
+# The text of your slides go in to [`slides.md`](https://github.com/scommab/impressor/blob/master/slides.md)
 
 === {"styles": ["just_title"]}
-# If you wish to edit the html template used to generate the slides it's in `template.html`
+# If you wish to edit the html template used to generate the slides it's in [`template.html`](https://github.com/scommab/impressor/blob/master/template.html)
 
 ===
 # Example Slide
