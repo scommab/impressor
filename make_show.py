@@ -2,7 +2,9 @@ import markdown2
 import json
 import sys
 
-types = json.loads(open("types.json").read())
+types = {}
+with open("types.json") as types_file:
+  types = json.loads(types_file.read())
 
 class Slide:
   def __init__(self, style, last_slide=None):
@@ -73,21 +75,31 @@ class Slide:
 def load_slides(f):
   slides = []
   content = None
-  for l in open(f):
-    if l.startswith("==="):
+  with open(f) as slides_file:
+    for l in slides_file:
+      if l.startswith("==="):
+        if content:
+          slides.append(content)
+        content = Slide(l.strip(), content)
+        continue
       if content:
-        slides.append(content)
-      content = Slide(l.strip(), content)
-      continue
-    if content:
-      content.addLine(l.rstrip())
+        content.addLine(l.rstrip())
   slides.append(content)
   return slides
 
-slides = load_slides("slides.md")
+if len(sys.argv) <= 1:
+  print """
+Usage:
+       make_slides.py <slides file> > output.html
+"""
+  sys.exit(-1)
+
+slides_file_name = sys.argv[1]
+
+slides = load_slides(slides_file_name)
 slides_html = []
 for s in slides:
   slides_html.append(s.toHtml())
 
-template = open("template.html").read()
-print template % "".join(slides_html)
+with open("template.html") as template_file:
+  print template_file.read() % "".join(slides_html)
