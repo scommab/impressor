@@ -1,9 +1,6 @@
 /**
- * This is a stylesheet for a demo presentation for impress.js
- * 
- * It is not meant to be a part of impress.js and is not required by impress.js.
- * I expect that anyone creating a presentation for impress.js would create their own
- * set of styles.
+ * Base styles are taken from the demo presentation for impress.js
+ * Search for "Impressor styles" to find the important styles
  */
 
 
@@ -58,21 +55,6 @@ table {
     border-spacing: 0;
 }
 
-
-body {
-    font-family: 'PT Sans', sans-serif;
-    
-    min-height: 740px;
-
-    background: rgb(215, 215, 215);
-    background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(rgb(240, 240, 240)), to(rgb(190, 190, 190)));
-    background: -webkit-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
-    background:    -moz-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
-    background:      -o-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
-    background:         radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
-
-    -webkit-font-smoothing: antialiased;
-}
 
 b, strong { font-weight: bold }
 i, em { font-style: italic}
@@ -131,10 +113,6 @@ body     { pointer-events: none; }
     opacity: 0.3;
 }
 
-.screenshot:not(.active) {
-    opacity: 0.0;
-}
-
 /* STEP SPECIFIC STYLES */
 
 /* hint on the first slide */
@@ -168,23 +146,6 @@ body     { pointer-events: none; }
     -o-transition:      opacity 1s,      -o-transform 0.5s 1s;
     transition:         opacity 1s,         transform 0.5s 1s;
 }
-
-.impress-on-title .hint {
-    opacity: 1;
-    
-    -webkit-transition: opacity 1s 5s, -webkit-transform 0.5s;
-    -moz-transition:    opacity 1s 5s,    -moz-transform 0.5s;
-    -ms-transition:     opacity 1s 5s,     -ms-transform 0.5s;
-    -o-transition:      opacity 1s 5s,      -o-transform 0.5s;
-    transition:         opacity 1s 5s,         transform 0.5s;
-    
-    -webkit-transform: translateY(0px);
-    -moz-transform:    translateY(0px);
-    -ms-transform:     translateY(0px);
-    -o-transform:      translateY(0px);
-    transform:         translateY(0px);
-}
-
 
 b {
     display: inline-block;
@@ -268,13 +229,6 @@ b {
     padding: 0;
 }
 
-/* on overview step everything is visible */
-
-.impress-on-overview .step {
-    opacity: 1;
-    cursor: pointer;
-}
-
 /*
  * SLIDE STEP STYLES
  *
@@ -322,16 +276,6 @@ b {
 }
 
 
-/* Example */
-.example {
-  font-size: 60%;
-  padding-left: 50px;
-  padding-top: 20px;
-}
-.example ul {
-  list-style-type:circle;
-}
-
 .slide:not(.present) .example {
   opacity: 0.2;
     -webkit-transition: opacity 3s linear;
@@ -339,15 +283,6 @@ b {
     -ms-transition:     opacity 3s;
     -o-transition:      opacity 3s;
     transition:         opacity 3s;
-}
-
-.present .example {
-  opacity: 1;
-}
-
-.vme_name {
-  color: #404040;
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif
 }
 
 /* IMPRESS NOT SUPPORTED STYLES */
@@ -381,3 +316,112 @@ b {
     display: block;
 }
 
+
+/* Impressor styles */
+body {
+    font-family: 'PT Sans', sans-serif;
+
+    min-height: 740px;
+
+    background: rgb(215, 215, 215);
+    background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(rgb(240, 240, 240)), to(rgb(190, 190, 190)));
+    background: -webkit-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+    background:    -moz-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+    background:      -o-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+    background:         radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+
+    -webkit-font-smoothing: antialiased;
+}
+
+h1 {
+  text-align: center;
+  font-size: 200%;
+  padding-bottom: 20px;
+}
+.slide h1 {
+  line-height: 60px;
+}
+h2 {
+  text-align: center;
+  font-size: 150%;
+  line-height: 30px;
+  padding-bottom: 20px;
+}
+ul {
+  list-style: disc;
+}
+li {
+  margin-left: 15px;
+  padding-bottom: 10px;
+}
+code {
+  font-family: monospace;
+  font-size: 80%;
+}
+pre {
+  padding: 25px;
+  margin-left: 10px;
+  border: 1px solid #111;
+  border-radius: 10px;
+  background: black;
+  color: white;
+}
+h1 a {
+  text-decoration: underline;
+}
+.note {
+  padding: 30px;
+  text-align: center;
+  font-size: 60%;
+}
+.tiny {
+  font-size: 40%;
+}
+.first h1 {
+  padding: 30px;
+}
+.just_title h1 {
+  padding-top: 50px;
+  font-size: 300%;
+  line-height: 100px;
+  color: #333;
+}
+.subtitles h2 {
+  padding-top: 50px;
+}
+.subtitles h2:first-child {
+  padding-top: 0px;
+}
+.hidden_slide:not(.active) {
+  opacity: 0.0;
+  -webkit-transition: opacity .5s linear;
+  -moz-transition:    opacity .5s;
+  -ms-transition:     opacity .5s;
+  -o-transition:      opacity .5s;
+  transition:         opacity .5s;
+}
+.slide_number {
+  display: none;
+}
+.slide .slide_number {
+  display: block; /* only show on slide type slides */
+  position: absolute;
+  bottom: 0px;
+  left: 5px;
+  font-size: 50%;
+}
+
+.blue {
+  background: #5A5AFD;
+}
+
+.red {
+  background: #FF4747;
+}
+
+.background_img {
+  background: url(../img/hexabump.png);
+}
+.background_img h1, .background_img h2 {
+  color: #EEE;
+}
