@@ -7,8 +7,8 @@
 === 
 # What does Impressor do?
 * It generates interesting looking presentations in a snap
-* It lets you write your slides in markdown
-* It lets you use simple slide templates (for slide style and slide placement)
+* It lets you write your slides in simple markdown
+* It gives you slide templates for both slide style and slide placement
 
 === {"styles": ["just_title"]}
 # What do the different slide placement templates look like?
@@ -27,15 +27,24 @@
 # And Slides can be reset back to the base line
 
 === {"styles": ["just_title"]}
-# What do the different slide effect templates look like?
+# Slides can also be different colors
 
-=== {"type": "under", "styles": ["hidden_slide", "just_title"]}
-# Slides can be hidden until they are selected
+=== {"type": "under", "styles": ["just_title", "blue"]}
+# Slides can be Blue
+
+=== {"type": "under", "styles": ["just_title", "red"]}
+# Slides can be Red
+
+=== {"type": "under", "styles": ["just_title", "background_img"]}
+# Slides can have background images
 
 === {"type": "under", "styles": ["notslide"]}
-# Slides can have no background
+# Slides can even have no background
 
-=== {"type": ["reset", "default"], "styles": ["just_title"]}
+=== {"type": ["reset", "default"], "styles": ["just_title", "hidden_slide"]}
+# Slides can be hidden until they are selected
+
+=== {"styles": ["just_title"]}
 # What do the slide format templates look like
 
 === {"type":"under", "styles": ["just_title"]}
@@ -48,6 +57,9 @@
 ## And multiple topics
 With multiple bits of information
 
+=== {"type":"under", "styles": ["subtitles"]}
+## Slides with Images
+![Hey Girl](img/hey-girl.png)
 
 === {"type": ["reset", "default"]}
 # And the default styling
@@ -86,20 +98,24 @@ With multiple bits of information
 # And back to normal
 
 === {"styles": ["just_title"]}
-# All templates are defined in [`types.json`](https://github.com/scommab/impressor/blob/master/types.json)
+# All slide location types are defined in [`types.json`](https://github.com/scommab/impressor/blob/master/types.json)
 
 === {"styles": ["just_title"]}
-# All styles are defined in [`impressor.css`](https://github.com/scommab/impressor/blob/master/css/impressor.css)
+# All styles are defined in [`styles.css`](https://github.com/scommab/impressor/blob/master/css/styles.css)
 
 === {"styles": ["just_title"]}
-# The text of your slides go in to [`slides.md`](https://github.com/scommab/impressor/blob/master/slides.md)
+# The base page template is [`template.html`](https://github.com/scommab/impressor/blob/master/template.html)
 
 === {"styles": ["just_title"]}
-# If you wish to edit the html template used to generate the slides it's in [`template.html`](https://github.com/scommab/impressor/blob/master/template.html)
+# The source of this example is in [`slides.md`](https://github.com/scommab/impressor/blob/master/slides.md)
 
 ===
-# Example Slide
-    === {"type":"under", "styles": ["just_title"]}
-    # Slides with just titles
+# Example Slides
+    === {"styles": ["notslide", "just_title"]}
+    # A simple slide show
+    === {"styles": ["just_title"]}
+    # A single slide
+    === {"type":"under"}
+    some interesting content
 === {"name":"overview", "styles": ["notslide"], "x_abs":7000, "y_abs":1500, "scale":15}
 
