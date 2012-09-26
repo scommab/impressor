@@ -54,7 +54,12 @@ class Slide:
 
   def getStyles(self):
     styles = ["step"]
-    styles.extend(self.details.get("styles", []))
+    s = self.details.get("styles", [])
+    if isinstance(s, list):
+      styles.extend(s)
+    elif s:
+      #it's not a list, it's just a string so just append it
+      styles.append(s)
     if "notslide" not in styles:
       styles.append("slide")
     return styles
