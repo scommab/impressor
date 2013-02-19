@@ -12,6 +12,7 @@ class Slide:
     self.content = []
     self.last_slide = last_slide
     self.slide_num = 1
+    self.total_slide_num = ""
     if self.last_slide:
       self.slide_num = self.last_slide.slide_num + 1
     self.types = []
@@ -69,7 +70,7 @@ class Slide:
     s = self.details.get("scale", 1)
     name = self.details.get("name", "")
     body = markdown2.markdown("\n".join(self.content))
-    body += "<div class='slide_number'>%d</div>" % self.slide_num
+    body += "<div class='slide_number'>%d<span class='total_slide_number'>/%s</span></div>" % (self.slide_num, self.total_slide_num)
     pos = ("data-x='%d' data-y='%d' data-z='%d' " + 
            "data-rotate='%d' data-scale='%d'") % \
           (self.x, self.y, self.z, r, s)
@@ -90,6 +91,8 @@ def load_slides(f):
       if content:
         content.addLine(l.rstrip())
   slides.append(content)
+  for s in slides:
+    s.total_slide_num = len(slides)
   return slides
 
 if len(sys.argv) <= 1:
