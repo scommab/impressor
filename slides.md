@@ -27,16 +27,16 @@
 # And Slides can be reset back to the base line
 
 === {"styles": ["just_title"]}
-# Slides can also be different colors
+# Slides can also be in different colors
 
 === {"type": "under", "styles": ["just_title", "blue"]}
-# Slides can be Blue
+# Blue
 
 === {"type": "under", "styles": ["just_title", "red"]}
-# Slides can be Red
+# Red
 
 === {"type": "under", "styles": ["just_title", "background_img"]}
-# Slides can have background images
+# Or with background images
 
 === {"type": "under", "styles": ["notslide"]}
 # Slides can even have no background
@@ -48,7 +48,7 @@
 # What do the slide format templates look like
 
 === {"type":"under", "styles": ["just_title"]}
-# Slides with just titles
+# This is a slide with large text
 
 === {"type":"under", "styles": ["subtitles"]}
 ## Slides with multiple sections 
@@ -57,9 +57,6 @@
 ## And multiple topics
 With multiple bits of information
 
-=== {"type":"under", "styles": ["subtitles"]}
-## Slides with Images
-![Hey Girl](img/hey-girl.png)
 
 === {"type": ["reset", "default"]}
 # And the default styling
@@ -84,6 +81,10 @@ With multiple bits of information
 * <b class="positioning">Positioning</b>
 * <b class="scaling">Scaling</b>
 * Rotating <b class="rotating90">90 degrees</b>
+
+=== {"type":"under", "styles": ["subtitles"]}
+## Using Images
+![Hey Girl](img/hey-girl.png)
 
 ===  {"type":["reset", "default"], "styles": ["just_title"]}
 # You can also manually place slides
