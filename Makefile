@@ -1,3 +1,3 @@
 
 all:
-	python make_show.py slides.md > index.html
+	python make_show.py slides.md > show/index.html

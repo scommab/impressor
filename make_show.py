@@ -3,7 +3,7 @@ import json
 import sys
 
 types = {}
-with open("types.json") as types_file:
+with open("templates/types.json") as types_file:
   types = json.loads(types_file.read())
 
 class Slide:
@@ -109,5 +109,5 @@ slides_html = []
 for s in slides:
   slides_html.append(s.toHtml())
 
-with open("template.html") as template_file:
+with open("templates/template.html") as template_file:
   print template_file.read() % "".join(slides_html)
