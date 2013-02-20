@@ -98,17 +98,14 @@ With multiple bits of information
 === {"type": ["reset", "default"], "styles": ["just_title"]}
 # And back to normal
 
-=== {"styles": ["just_title"]}
-# All slide location types are defined in [`types.json`](https://github.com/scommab/impressor/blob/master/types.json)
 
-=== {"styles": ["just_title"]}
-# All styles are defined in [`styles.css`](https://github.com/scommab/impressor/blob/master/css/styles.css)
 
-=== {"styles": ["just_title"]}
-# The base page template is [`template.html`](https://github.com/scommab/impressor/blob/master/template.html)
+===
+# Customizable Template Files
+* HTML Template - [`templates/template.html`](https://github.com/scommab/impressor/blob/master/templates/template.html)
+* Slide templates - [`templates/types.json`](https://github.com/scommab/impressor/blob/master/templates/types.json)
+* CSS Styles - [`show/styles.css`](https://github.com/scommab/impressor/blob/master/show/css/styles.css)
 
-=== {"styles": ["just_title"]}
-# The source of this example is in [`slides.md`](https://github.com/scommab/impressor/blob/master/slides.md)
 
 ===
 # Example Slides
@@ -118,5 +115,9 @@ With multiple bits of information
     # A single slide
     === {"type":"under"}
     some interesting content
+
+=== {"styles": ["just_title"]}
+# This presentation's source: [`slides.md`](https://github.com/scommab/impressor/blob/master/slides.md)
+
 === {"name":"overview", "styles": ["notslide"], "x_abs":7000, "y_abs":1500, "scale":15}
 
