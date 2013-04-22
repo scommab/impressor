@@ -99,8 +99,51 @@ With multiple bits of information
 # And back to normal
 
 
+=== {"type": ["reset", "default"], "styles": ["just_title"]}
+# Now with Graphs
 
-===
+=== {"type":"under"}
+# Bar graphs
+<div class="bar_chart"
+     id="graph1"
+     xkey='graphs'
+     ykeys='["awesome"]'
+     labels='["Awesomeness"]'
+     data='[
+        {"graphs": 1, "awesome": 2},
+        {"graphs": 2, "awesome": 4},
+        {"graphs": 3, "awesome": 8}
+     ]'
+></div>
+
+=== {"type":"under"}
+# Line graphs
+<div class="line_chart"
+     id="graph2"
+     xkey='date'
+     ykeys='["awesome"]'
+     labels='["Awesomeness"]'
+     data='[
+       {"date": "2010", "awesome": 0},
+       {"date": "2011", "awesome": 2},
+       {"date": "2012", "awesome": 8}
+     ]'
+> </div>
+
+
+=== {"type":"under"}
+# Donut graphs
+<div class="donut_chart"
+     id="graph3"
+     data='[
+       {"label": "Graph 1", "value": 2},
+       {"label": "Graph 2", "value": 4},
+       {"label": "Graph 3", "value": 8}
+     ]'
+></div>
+
+
+=== {"type": ["reset", "default"], "styles": ["just_title"]}
 # Customizable Template Files
 * HTML Template - [`templates/template.html`](https://github.com/scommab/impressor/blob/master/templates/template.html)
 * Slide templates - [`templates/types.json`](https://github.com/scommab/impressor/blob/master/templates/types.json)
@@ -119,5 +162,9 @@ With multiple bits of information
 === {"styles": ["just_title"]}
 # This presentation's source: [`slides.md`](https://github.com/scommab/impressor/blob/master/slides.md)
 
-=== {"name":"overview", "styles": ["notslide"], "x_abs":7000, "y_abs":1500, "scale":15}
+=== {"name":"overview", "styles": ["notslide", "hidden_slide"], "x_abs":7000, "y_abs":1500, "scale":15}
+<br/><br/> <br/><br/> <br/><br/>
+<div style="font-size: 30%; padding-top: 100px; text-align: right;">
+If you like the presentation try <a href="https://github.com/scommab/impressor">impressor</a>
+</div>
 

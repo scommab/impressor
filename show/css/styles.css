@@ -425,3 +425,8 @@ h1 a {
 .background_img h1, .background_img h2 {
   color: #EEE;
 }
+
+.line_chart, .bar_chart, .donut_chart {
+  height: 70%;
+  width: 100%;
+}

@@ -9,6 +9,7 @@
 
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
 
+   <link href="css/morris-0.4.2.min.css" rel="stylesheet" />
    <link href="css/styles.css" rel="stylesheet" />
     
 </head>
@@ -35,9 +36,91 @@ if ("ontouchstart" in document.documentElement) {
 
 <script src="js/jquery.js"></script>
 <script src="js/impress.js"></script>
+<script src="js/raphael-min.js"></script>
+<script src="js/morris-0.4.2.min.js"></script>
 <script>impress().init();</script>
 <script>
-  // add some js if you want
+$(document).ready(function() {
+  $(".bar_chart").each(function() {
+    var $t = $(this)
+    var id = $t.attr("id");
+    var xkey = $t.attr("xkey");
+    var ykeys = $.parseJSON($t.attr("ykeys"));
+    var labels = $.parseJSON($t.attr("labels"));
+    var data = $.parseJSON($t.attr("data"));
+    var src = $.parseJSON($t.attr("src"));
+    if (data && !src) {
+      new Morris.Bar({
+        element: id,
+        hideHover: true,
+        data: data,
+        xkey: xkey,
+        ykeys: ykeys,
+        labels: labels
+      });
+    } else {
+      $.getJSON(src, function(data) {
+        new Morris.Bar({
+          element: id,
+          hideHover: true,
+          data: data,
+          xkey: xkey,
+          ykeys: ykeys,
+          labels: labels
+        });
+      });
+    }
+  });
+  $(".line_chart").each(function() {
+    var $t = $(this)
+    var id = $t.attr("id");
+    var xkey = $t.attr("xkey");
+    var ykeys = $.parseJSON($t.attr("ykeys"));
+    var labels = $.parseJSON($t.attr("labels"));
+    var data = $.parseJSON($t.attr("data"));
+    var src = $.parseJSON($t.attr("src"));
+    if (data && !src) {
+      new Morris.Line({
+        element: id,
+        hideHover: true,
+        data: data,
+        xkey: xkey,
+        ykeys: ykeys,
+        labels: labels
+      });
+    } else {
+      $.getJSON(src, function(data) {
+        new Morris.Line({
+          element: id,
+          hideHover: true,
+          data: data,
+          xkey: xkey,
+          ykeys: ykeys,
+          labels: labels
+        });
+      });
+    }
+  });
+  $(".donut_chart").each(function() {
+    var $t = $(this)
+    var id = $t.attr("id");
+    var data = $.parseJSON($t.attr("data"));
+    var src = $.parseJSON($t.attr("src"));
+    if (data && !src) {
+      new Morris.Donut({
+        element: id,
+        data: data
+      });
+    } else {
+      $.getJSON(src, function(data) {
+        new Morris.Line({
+          element: id,
+          data: data
+        });
+      });
+    }
+  });
+});
 </script>
 </body>
 </html>
