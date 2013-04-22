@@ -157,89 +157,10 @@ if ("ontouchstart" in document.documentElement) {
 <script src="js/impress.js"></script>
 <script src="js/raphael-min.js"></script>
 <script src="js/morris-0.4.2.min.js"></script>
+<script src="js/graph-util.js"></script>
 <script>impress().init();</script>
+<script>window.drawGraphs();</script>
 <script>
-$(document).ready(function() {
-  $(".bar_chart").each(function() {
-    var $t = $(this)
-    var id = $t.attr("id");
-    var xkey = $t.attr("xkey");
-    var ykeys = $.parseJSON($t.attr("ykeys"));
-    var labels = $.parseJSON($t.attr("labels"));
-    var data = $.parseJSON($t.attr("data"));
-    var src = $.parseJSON($t.attr("src"));
-    if (data && !src) {
-      new Morris.Bar({
-        element: id,
-        hideHover: true,
-        data: data,
-        xkey: xkey,
-        ykeys: ykeys,
-        labels: labels
-      });
-    } else {
-      $.getJSON(src, function(data) {
-        new Morris.Bar({
-          element: id,
-          hideHover: true,
-          data: data,
-          xkey: xkey,
-          ykeys: ykeys,
-          labels: labels
-        });
-      });
-    }
-  });
-  $(".line_chart").each(function() {
-    var $t = $(this)
-    var id = $t.attr("id");
-    var xkey = $t.attr("xkey");
-    var ykeys = $.parseJSON($t.attr("ykeys"));
-    var labels = $.parseJSON($t.attr("labels"));
-    var data = $.parseJSON($t.attr("data"));
-    var src = $.parseJSON($t.attr("src"));
-    if (data && !src) {
-      new Morris.Line({
-        element: id,
-        hideHover: true,
-        data: data,
-        xkey: xkey,
-        ykeys: ykeys,
-        labels: labels
-      });
-    } else {
-      $.getJSON(src, function(data) {
-        new Morris.Line({
-          element: id,
-          hideHover: true,
-          data: data,
-          xkey: xkey,
-          ykeys: ykeys,
-          labels: labels
-        });
-      });
-    }
-  });
-  $(".donut_chart").each(function() {
-    var $t = $(this)
-    var id = $t.attr("id");
-    var data = $.parseJSON($t.attr("data"));
-    var src = $.parseJSON($t.attr("src"));
-    if (data && !src) {
-      new Morris.Donut({
-        element: id,
-        data: data
-      });
-    } else {
-      $.getJSON(src, function(data) {
-        new Morris.Line({
-          element: id,
-          data: data
-        });
-      });
-    }
-  });
-});
 </script>
 </body>
 </html>
